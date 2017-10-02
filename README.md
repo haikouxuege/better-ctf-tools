@@ -3,6 +3,12 @@
 
 在该项目基础上更改：https://github.com/Ollyder/CTF_tools
 
+运行截图：
+
+![](https://github.com/haikouxuege/better-ctf-tools/blob/master/1.png)
+
+![](https://github.com/haikouxuege/better-ctf-tools/blob/master/2.png)
+
 ## 环境
 Python 3.x
 
