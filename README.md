@@ -9,8 +9,12 @@ Python 3.x
 ## 需要的模块
 pycipher
 
+Pillow
+
 ## 模块安装方式
 pip install pycipher
+
+pip install Pillow
 
 如果安装出错，请使用虚拟环境，解决使用pip安装模块时，路径不对的问题，参考：http://www.jianshu.com/p/08c657bd34f1
  
@@ -32,6 +36,9 @@ v1.1.1
 6. 字符串反转
 7. URL编码解码
 8. 位移密码解密
+9. ROT13解码
+10. RGB值转换图片
+11. 整数分解
 
 ## 更新说明
-修复一些小问题
+修复一些小问题，增加新功能
