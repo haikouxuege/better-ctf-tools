@@ -1,5 +1,5 @@
 # _*_ coding:UTF-8 _*_
-from source import md5_moudle,MD5_online_crack,b64_moudle,caesar,Railfence,ascii_brute_moudle
+from source import md5_moudle,MD5_online_crack,b64_moudle,caesar,Railfence,ascii_brute_moudle,rot13_moudle,RGB2pic_moudle,factorization_moudle
 from source.morse_moudle import Morse
 import urllib.request
 
@@ -13,20 +13,20 @@ def begin():
 |_.__/ \___|\__|\__\___|_|   \____| |_| |_|     |_| \___/ \___/|_|___/
 
 
-----------------------------------------------------------
-        1、MD5加密                  10、栅栏解密
-        2、MD5在线解密              11、栅栏爆破
-        3、Base64加密               12、字符串反转
-        4、Base64解密               13、URL编码
-        5、Morse加密                14、URL解码
-        6、Morse解密                15、ascii位移解密
-        7、Caesar加密
-        8、Caesar解密
-        9、Caesar爆破
------------------------------------------------------------
++----------------------------------------------------------+
+|        1.MD5加密                  10.栅栏解密            |
+|        2.MD5在线解密              11.栅栏爆破            |
+|        3.Base64加密               12.字符串反转          |
+|        4.Base64解密               13.URL编码             |
+|        5.Morse加密                14.URL解码             |
+|        6.Morse解密                15.ascii位移解密       |
+|        7.Caesar加密               16.rot13编解码         |
+|        8.Caesar解密               17.RGB值转图片         |
+|        9.Caesar爆破               18.因数分解            |
++----------------------------------------------------------+
     ''')
-    a = input('选择：')
-    return int(a)
+    fun_choice = input('选择：')
+    return int(fun_choice)
 
 def URLDecode():
     a = input("URL:")
@@ -39,7 +39,7 @@ def URLEncode():
     print(b)
 
 
-def fanzhuan():
+def reverse():
     a = input('需要反转的字符串:')
     b = a[::-1]
     print(b)
@@ -124,45 +124,65 @@ def ascii_brute():
     print('在source/ascii.txt中填写ascii（一行一个）')
     ascii_brute_moudle.ascii_brute_main()
 
-def main():
-    while True:
-        a = begin()
-        if a == 1:
-            md5()
-        elif a == 2:
-            md5_net()
-        elif a == 3:
-            b64en()
-        elif a == 4:
-            b64de()
-        elif a == 5:
-            morse_en()
-        elif a == 6:
-            morse_de()
-        elif a == 7:
-            caesar_en()
-        elif a == 8:
-            caesar_de()
-        elif a == 9:
-            caesar_brute()
-        elif a == 10:
-            raildecode()
-        elif a == 11:
-            railbrute()
-        elif a == 12:
-            fanzhuan()
-        elif a == 13:
-            URLDecode()
-        elif a == 14:
-            URLEncode()
-        elif a == 15:
-            ascii_brute()
-        elif a == 0:
-            exit(0)
+def rot_encode():
+    rot13_moudle.rot13_moudle_main()
 
-        b = input('\n继续？(T/F)').upper()
-        if b == 'F':
-            break
+def RGB2pic():
+    RGB2pic_moudle.RGB2pic_main()
+
+def factorization():
+    num = int(input('num=:'))
+    factorization_moudle.fac(num)
+
+def main():
+    try:
+        while True:
+            main_choice = begin()
+            if main_choice == 1:
+                md5()
+            elif main_choice == 2:
+                md5_net()
+            elif main_choice == 3:
+                b64en()
+            elif main_choice == 4:
+                b64de()
+            elif main_choice == 5:
+                morse_en()
+            elif main_choice == 6:
+                morse_de()
+            elif main_choice == 7:
+                caesar_en()
+            elif main_choice == 8:
+                caesar_de()
+            elif main_choice == 9:
+                caesar_brute()
+            elif main_choice == 10:
+                raildecode()
+            elif main_choice == 11:
+                railbrute()
+            elif main_choice == 12:
+                reverse()
+            elif main_choice == 13:
+                URLDecode()
+            elif main_choice == 14:
+                URLEncode()
+            elif main_choice == 15:
+                ascii_brute()
+            elif main_choice == 16:
+                rot_encode()
+            elif main_choice == 17:
+                RGB2pic()
+            elif main_choice == 18:
+                factorization()
+            elif main_choice == 0:
+                exit(0)
+
+            again = input('\n继续？(T/F)').upper()
+            if again == 'F':
+                break
+    except:
+        print('异常中止')
+
 
 
 if __name__ == '__main__':
