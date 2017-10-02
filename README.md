@@ -11,6 +11,9 @@ pycipher
 ## 模块安装方式
 pip install pycipher
  如果安装出错，请使用虚拟环境，解决使用pip安装模块时，路径不对的问题，参考：http://www.jianshu.com/p/08c657bd34f1
+ 
+## 使用
+python3 CTFtools.py
 
 ## 初衷
 想要快速的得到CTF中密码学中低难度题目的分数
