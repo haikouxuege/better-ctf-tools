@@ -1,4 +1,0 @@
-资源文件夹中：
-1.morse_dic.txt为摩斯电码表
-2.ascii.txt为要解码的内容
-3.RGB.txt为rgb值文件

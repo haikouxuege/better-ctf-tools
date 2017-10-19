@@ -8,7 +8,7 @@ def RGB2pic_main():
     y = int(input('y=')) #y坐标  x*y = 行数
 
     im = Image.new("RGB",(x,y))#创建图片
-    file = open('./source/RGB.txt') #打开rbg值文件
+    file = open('./RGB.txt') #打开rbg值文件
 
     #通过一个个rgb点生成图片
     for i in range(0,x):
@@ -17,7 +17,8 @@ def RGB2pic_main():
             rgb = line.split(",")#分离rgb
             im.putpixel((i,j),(int(rgb[0]),int(rgb[1]),int(rgb[2])))#rgb转化为像素
 
-    im.show()
+    im.save('RGB2pic.png','png')
+    print('Save as RGB2pic.png')
 
 if __name__ == "__main__":
     RGB2pic_main()

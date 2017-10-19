@@ -1,5 +1,5 @@
 # _*_ coding:UTF-8 _*_
-from source import md5_moudle,MD5_online_crack,b64_moudle,caesar,Railfence,ascii_brute_moudle,rot13_moudle,RGB2pic_moudle,factorization_moudle
+from source import md5_moudle,MD5_online_crack,b64_moudle,caesar,Railfence,ascii_brute_moudle,rot13_moudle,RGB2pic_moudle,factorization_moudle,num_to_QR_moudle
 from source.morse_moudle import Morse
 import urllib.request
 
@@ -13,17 +13,17 @@ def begin():
 |_.__/ \___|\__|\__\___|_|   \____| |_| |_|     |_| \___/ \___/|_|___/
 
 
-+----------------------------------------------------------+
-|        1.MD5加密                  10.栅栏解密            |
-|        2.MD5在线解密              11.栅栏爆破            |
-|        3.Base64加密               12.字符串反转          |
-|        4.Base64解密               13.URL编码             |
-|        5.Morse加密                14.URL解码             |
-|        6.Morse解密                15.ascii位移解密       |
-|        7.Caesar加密               16.rot13编解码         |
-|        8.Caesar解密               17.RGB值转图片         |
-|        9.Caesar爆破               18.因数分解            |
-+----------------------------------------------------------+
++---------------------------------------------------------------------------------+
+|        1.MD5加密                  10.栅栏解密            19.01字符串转换二维码  |
+|        2.MD5在线解密              11.栅栏爆破            20.utf9转utf8          |
+|        3.Base64加密               12.字符串反转                                 |
+|        4.Base64解密               13.URL编码                                    |
+|        5.Morse加密                14.URL解码                                    |
+|        6.Morse解密                15.ascii位移解密                              |
+|        7.Caesar加密               16.rot13编解码                                |
+|        8.Caesar解密               17.RGB值转图片                                |
+|        9.Caesar爆破               18.因数分解                                   |
++---------------------------------------------------------------------------------+
     ''')
     fun_choice = input('选择：')
     return int(fun_choice)
@@ -121,8 +121,8 @@ def railbrute():
     Railfence.Rail_brute(string)
 
 def ascii_brute():
-    print('在source/ascii.txt中填写ascii（一行一个）')
-    ascii_brute_moudle.ascii_brute_main()
+    filename=input('(ASCII码一行一个)\nfilename=')
+    ascii_brute_moudle.ascii_brute_main(filename)
 
 def rot_encode():
     rot13_moudle.rot13_moudle_main()
@@ -133,6 +133,10 @@ def RGB2pic():
 def factorization():
     num = int(input('num=:'))
     factorization_moudle.fac(num)
+
+def num_to_QRcode():
+    filename=input('filename=')
+    num_to_QR_moudle.num_to_QR_main(filename)
 
 def main():
     try:
@@ -174,13 +178,18 @@ def main():
                 RGB2pic()
             elif main_choice == 18:
                 factorization()
+            elif main_choice == 19:
+                num_to_QRcode()
+            elif main_choice == 20:
+                utf9_to_utf8()
             elif main_choice == 0:
                 exit(0)
 
             again = input('\n继续？(T/F)').upper()
             if again == 'F':
                 break
-    except:
+    except Exception as e:
+        print(e)
         print('异常中止')
 
 
