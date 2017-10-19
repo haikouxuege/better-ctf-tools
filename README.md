@@ -7,6 +7,11 @@
 
 ![](./1.png)
 
+部分解题结果：
+
+![](./0101.txt_to_QR.png)
+![](./RGB2pic.png)
+
 ## 环境
 Linux Python 3.x
 
