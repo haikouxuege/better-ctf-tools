@@ -5,46 +5,52 @@
 
 运行截图：
 
-![](https://github.com/haikouxuege/better-ctf-tools/blob/master/1.png)
-
-![](https://github.com/haikouxuege/better-ctf-tools/blob/master/2.png)
+![](./1.png)
 
 ## 环境
-Python 3.x
+Linux Python 3.x
 
-## 需要的模块
-pycipher
+## 所需Python模块及安装
 
-Pillow
+* pycipher
+```
+pip3 install pycipher
+```
+* Pillow
+```
+pip3 install Pillow
+```
+* utf9
+```
+pip3 install utf9
+```
 
-## 模块安装方式
-pip install pycipher
-
-pip install Pillow
-
-如果安装出错，请使用虚拟环境，解决使用pip安装模块时，路径不对的问题，参考：http://www.jianshu.com/p/08c657bd34f1
- 
 ## 使用
 python3 CTFtools.py
 
-## 初衷
-想要快速的得到CTF中密码学中低难度题目的分数
+## 当前版本功能
+* MD5加密以及进行MD5在线解密
+* Base64加解密
+* 摩斯密码加解密
+* 凯撒密码加解密以及爆破
+* 栅栏密码加解密以及爆破
+* 字符串反转
+* URL编码解码
+* 位移密码解密
+* ROT13解码
+* RGB值转换图片
+* 整数分解
+* 01字符串转二维码
+* utf9转utf8
+
+## 文件说明
+* ./source/morse_dic.txt 为摩斯电码表
+* 0101.txt 为"01字符串转二维码"示例，"0101.txt\_to\_QR.png"是示例结果
+* ascii.txt 为"ascii位移解密"示例
+* RGB.txt 为"RGB值转图片"示例，"RGB2pic.png"是示例结果
 
 ## 当前版本
-v1.1.1
-
-## 当前版本功能
-1. MD5加密以及进行MD5在线解密
-2. Base64加解密
-3. 摩斯密码加解密
-4. 凯撒密码加解密以及爆破
-5. 栅栏密码加解密以及爆破
-6. 字符串反转
-7. URL编码解码
-8. 位移密码解密
-9. ROT13解码
-10. RGB值转换图片
-11. 整数分解
+v1.1.2
 
 ## 更新说明
 修复一些小问题，增加新功能

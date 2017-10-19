@@ -1,5 +1,5 @@
-def ascii_brute_main():
-    with open("./source/ascii.txt") as f:
+def ascii_brute_main(filename):
+    with open(filename) as f:
         line = []
         for each in f:
             line.append(int(each[:-1]))
